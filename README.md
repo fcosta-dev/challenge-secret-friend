@@ -24,15 +24,6 @@ O objetivo principal deste desafio é praticar **lógica de programação**, com
 
 ---
 
-## 📂 Estrutura do Projeto
-├── index.html
-├── style.css
-├── app.js
-├── assets/
-│ ├── amigo-secreto.png
-│ ├── play_circle_outline.png
-
-
 ## 📋 Como Executar o Projeto
 
 Siga as etapas abaixo para executar o projeto localmente:
