@@ -1,51 +1,51 @@
-let friendsList = [];
+let listaDeAmigos = [];
 
-function addFriend() {
-  const input = document.getElementById("friend");
-  const name = input.value.trim();
+function adicionarAmigo() {
+  const input = document.getElementById("amigo");
+  const nome = input.value.trim();
 
-  if (!name) {
-    alert("Please enter a valid name.");
+  if (!nome) {
+    alert("Por favor, insira um nome válido.");
     return;
   }
 
-  friendsList.push(name);
+  listaDeAmigos.push(nome);
   input.value = "";
-  displayList();
+  exibirLista();
 }
 
-function displayList() {
-  const ul = document.getElementById("friendsList");
+function exibirLista() {
+  const ul = document.getElementById("listaAmigos");
   ul.innerHTML = "";
 
-  friendsList.forEach((name, index) => {
+  listaDeAmigos.forEach((nome, indice) => {
     const li = document.createElement("li");
-    li.textContent = name;
+    li.textContent = nome;
 
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.onclick = () => removeFriend(index);
-    removeButton.style.marginLeft = "10px";
+    const botaoRemover = document.createElement("button");
+    botaoRemover.textContent = "Remover";
+    botaoRemover.onclick = () => removerAmigo(indice);
+    botaoRemover.style.marginLeft = "10px";
 
-    li.appendChild(removeButton);
+    li.appendChild(botaoRemover);
     ul.appendChild(li);
   });
 }
 
-function removeFriend(index) {
-  friendsList.splice(index, 1);
-  displayList();
+function removerAmigo(indice) {
+  listaDeAmigos.splice(indice, 1);
+  exibirLista();
 }
 
-function drawFriend() {
-  if (friendsList.length === 0) {
-    alert("The list is empty. Add names before drawing.");
+function sortearAmigo() {
+  if (listaDeAmigos.length === 0) {
+    alert("A lista está vazia. Adicione nomes antes de realizar o sorteio.");
     return;
   }
 
-  const randomIndex = Math.floor(Math.random() * friendsList.length);
-  const selectedFriend = friendsList[randomIndex];
+  const indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+  const amigoSorteado = listaDeAmigos[indiceAleatorio];
 
-  const result = document.getElementById("result");
-  result.innerHTML = `<li>The selected friend is: <strong>${selectedFriend}</strong></li>`;
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = `<li>O amigo sorteado é: <strong>${amigoSorteado}</strong></li>`;
 }
