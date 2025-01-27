@@ -10,9 +10,7 @@ function addFriend() {
   }
 
   friendsList.push(name);
-
   input.value = "";
-
   displayList();
 }
 
@@ -32,4 +30,22 @@ function displayList() {
     li.appendChild(removeButton);
     ul.appendChild(li);
   });
+}
+
+function removeFriend(index) {
+  friendsList.splice(index, 1);
+  displayList();
+}
+
+function drawFriend() {
+  if (friendsList.length === 0) {
+    alert("The list is empty. Add names before drawing.");
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * friendsList.length);
+  const selectedFriend = friendsList[randomIndex];
+
+  const result = document.getElementById("result");
+  result.innerHTML = `<li>The selected friend is: <strong>${selectedFriend}</strong></li>`;
 }
