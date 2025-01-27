@@ -42,7 +42,7 @@ Siga as etapas abaixo para executar o projeto localmente:
   git clone https://github.com/seu-usuario/seu-repositorio.git
 ```
 
-2. cd seu-repositorio
+2. **Navegue até o diretório do projeto**:
 ```bash
 cd seu-repositorio
 ```
